@@ -35,6 +35,17 @@ A = dlmread('haberman$separated.data','$');
 
 
 %% 5
+% This works fine for most of the datafiles, including images etc.
+A = importdata('abalone.data');
+% A = 
+%
+%          data: [4177x8 double]
+%      textdata: {4177x1 cell}
+%    rowheaders: {4177x1 cell}
+% Note: This function should be your first choice to read a datafile.
+
+
+%% 6
 % reads each row as a string
 id = fopen(fileName, 'r');
 line = textscan(id, '%s'); %or
