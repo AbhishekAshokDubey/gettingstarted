@@ -58,10 +58,14 @@ line = textread('abalone.data', '%s');
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Note:
+% 1) For files with headers we can use the offset arguments of the functions
+% Ex. data = csvread('glass.data',1,0); % or
+%  data = dlmread('glass.data',1,0);
 
-Note: In most of the file read function in the MATLAB you can also avoid any special character in the data.
-Ex.
-1.2a 2.3b 4
-1.5a 4.1b 5
+% 2) In most of the file read function in the MATLAB you can also avoid any special character in the data.
+% Ex.
+% 1.2a 2.3b 4
+% 1.5a 4.1b 5
 
-you can read this as a simple matrix ignoring a & b using '%*'.
+% you can read this as a simple matrix ignoring a & b using '%*'.
