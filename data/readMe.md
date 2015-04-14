@@ -5,6 +5,9 @@ Datasets are downloaded from:
 
 Info:
 abalone.data: Categorical, Integer, Real
+
 adult.data: Categorical, Integer
+
 breast-cancer-wisconsin.data: Integer
+
 glass.data: Real
