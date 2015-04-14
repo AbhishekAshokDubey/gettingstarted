@@ -1,11 +1,6 @@
-fileName = 'abalone.data';
-
-
-%%%%%%%% fopen %%%%%%%%
-
 %% 1
 % read each column of a file
-id = fopen(fileName, 'r');
+id = fopen('abalone.data', 'r');
 line = textscan(id, '%s %f %f %f %f %f %f %f %d', 'delimiter', ',');
 
 % line{1} is column 1
@@ -26,10 +21,22 @@ line = textscan(id, '%s %f %f %f %f %f %f %f %d', 'delimiter', ',');
 
 %% 3
 % Only for comma separated files with numeric data, read it as a matrix
+data = csvread('glass.data');
+% data will be a Matrix of doubles as the data have double values
+data = csvread('haberman.data');
+% data will be a Matrix of singles/ integers as the data have integer values
+
+%Note: read more about offsets by using the command 'help csvread'
+M = csvread(filename,R1,C1)
+M = csvread(filename,R1,C1,[R1 C1 R2 C2])
 
 
+%% 4
+% This is exactly same as CSV but this does not restrcit the delimiter only to comma. It can be any ASCII char.
+A = dlmread('haberman$separated.data','$');
+% Note: A = csvread('haberman$separated.data','$'); will give error here.
 
-%% 3
+%% 5
 % reads each row as a string
 id = fopen(fileName, 'r');
 line = textscan(id, '%s'); %or
@@ -41,23 +48,7 @@ line = textread('abalone.data', '%s');
 % Note: This method is good when you are not aware of the number or types of column.
 % you can read each row as string and process it to take out the values
 
-
-%%%%%%%% g %%%%%%%%
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 Note: In most of the file read function in the MATLAB you can also avoid any special character in the data.
