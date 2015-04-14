@@ -2,7 +2,6 @@
 % read each column of a file
 id = fopen('abalone.data', 'r');
 line = textscan(id, '%s %f %f %f %f %f %f %f %d', 'delimiter', ',');
-
 % line{1} is column 1
 % line{2} is column 2
 % ...
@@ -13,7 +12,6 @@ line = textscan(id, '%s %f %f %f %f %f %f %f %d', 'delimiter', ',');
 %% 2
 % read each column of a file
 [a,b,c,d,e,f,g,h,i] = textread('abalone.data', '%s %f %f %f %f %f %f %f %d', 'delimiter',',');
-
 % a is column 1
 % b is column 2
 % ...
@@ -25,10 +23,9 @@ data = csvread('glass.data');
 % data will be a Matrix of doubles as the data have double values
 data = csvread('haberman.data');
 % data will be a Matrix of singles/ integers as the data have integer values
-
-%Note: read more about offsets by using the command 'help csvread'
-M = csvread(filename,R1,C1)
-M = csvread(filename,R1,C1,[R1 C1 R2 C2])
+% Note: read more about offsets by using the command 'help csvread'
+% M = csvread(filename,R1,C1)
+% M = csvread(filename,R1,C1,[R1 C1 R2 C2])
 
 
 %% 4
@@ -36,12 +33,12 @@ M = csvread(filename,R1,C1,[R1 C1 R2 C2])
 A = dlmread('haberman$separated.data','$');
 % Note: A = csvread('haberman$separated.data','$'); will give error here.
 
+
 %% 5
 % reads each row as a string
 id = fopen(fileName, 'r');
 line = textscan(id, '%s'); %or
 line = textread('abalone.data', '%s');
-
 % line{1} is line 1
 % line{2} is line 1
 % ...
